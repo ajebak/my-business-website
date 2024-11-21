@@ -1,0 +1,326 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #4CAF50;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.navbar .logo h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Logo Styling */
+/* .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+} */
+
+.navbar .nav-links {
+    display: flex;
+    list-style-type: none;
+    gap: 15px;
+    font-style: italic;
+}
+
+.navbar .nav-links li {
+    margin: 0 10px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar .nav-links a:hover {
+    color: #ddd;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../images/farm-background.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: whitesmoke;
+    padding: 100px 20px;
+}
+
+.hero .welcome {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: wheat;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.about .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Products Section */
+.products {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.product-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(0.9);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin-top: 15px;
+}
+
+.product-card p {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+
+    background-color: #f1f1f1;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.services ul {
+    list-style-type: none;
+    font-size: 1.2em;
+}
+
+.services li {
+    margin: 10px 0;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Wrap and Styling */
+p {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.contact form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact input,
+.contact textarea {
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    width: 100%;
+    /* Set button width to match input fields */
+    max-width: 200px;
+    /* Limit button width */
+    margin-top: 10px;
+}
+
+.contact button:hover {
+    background-color: #45a049;
+}
+
+/* Container for social media icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+/* Style for each icon link */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 24px;
+    color: white;
+}
+
+/* Icon hover effects */
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for Twitter icon */
+.social-icon.twitter {
+    background-color: #1DA1F2;
+}
+
+/* Style for Facebook icon */
+.social-icon.facebook {
+    background-color: #3b5998;
+}
+
+/* Style for Instagram icon */
+.social-icon.instagram {
+    background-color: #E4405F;
+}
+
+/* Footer */
+footer {
+    padding: 15px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+footer :hover {
+    color: wheat;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+    }
+}
