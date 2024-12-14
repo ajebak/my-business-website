@@ -24,17 +24,16 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     // Get the form values
     const formData = new FormData(this);
 
-    // Set the recipient email to your business email
-    const businessEmail = 'bomotfarmstockltd27@gmail.com';
-    formData.append('to_email', businessEmail);
-
-    // Pass the form data for from_name and other fields dynamically
-    formData.append('name', formData.get('name')); // Name from the form
-    formData.append('email', formData.get('email')); // Email from the form
-    formData.append('message', formData.get('message')); // Message from the form
+    // Ensure these keys match EmailJS template variables
+    const emailParams = {
+        from_name: formData.get('name'),    // Matches 'from_name' in template
+        from_email: formData.get('email'), // Matches 'from_email' in template
+        message: formData.get('message'),  // Matches 'message' in template
+        to_email: 'bomotfarmstockltd27@gmail.com' // Hardcoded business email
+    };
 
     // Send the email using EmailJS
-    emailjs.sendForm("service_hgnbabc", "template_d5vu3vc", formData)
+    emailjs.send("service_hgnbabc", "template_d5vu3vc", emailParams)
         .then(function (response) {
             alert("Message sent successfully!");
             console.log("SUCCESS!", response.status, response.text);
