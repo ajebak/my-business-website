@@ -1,6 +1,3 @@
-// Initialize EmailJS
-emailjs.init("4fzZNrgeSvYfjd8iS");
-
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -21,16 +18,19 @@ document.getElementById('hamburger-icon').addEventListener('click', function () 
 document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Get the form values
+    // Collect form values correctly
     const formData = new FormData(this);
 
-    // Ensure these keys match EmailJS template variables
+    // Correct the data object based on input names
     const emailParams = {
-        from_name: formData.get('name'),    // Matches 'from_name' in template
-        from_email: formData.get('email'), // Matches 'from_email' in template
-        message: formData.get('message'),  // Matches 'message' in template
-        to_email: 'bomotfarmstockltd27@gmail.com' // Hardcoded business email
+        from_name: formData.get('from_name'),   // Matches input name
+        from_email: formData.get('from_email'), // Matches input name
+        message: formData.get('message'),       // Matches input name
+        to_email: 'bomotfarmstockltd27@gmail.com' // Business email
     };
+
+    // Ensure EmailJS initialization
+    emailjs.init("4fzZNrgeSvYfjd8iS");
 
     // Send the email using EmailJS
     emailjs.send("service_hgnbabc", "template_d5vu3vc", emailParams)
@@ -43,4 +43,3 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
             console.error("FAILED...", error);
         });
 });
-
