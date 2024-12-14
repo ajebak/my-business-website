@@ -1,3 +1,6 @@
+// Initialize EmailJS
+emailjs.init("jkUMwZvx9mb7WTwVZ");
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -11,23 +14,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Toggle the menu visibility when clicking the hamburger icon
 document.getElementById('hamburger-icon').addEventListener('click', function () {
     const navLinks = document.getElementById('nav-links');
-    navLinks.classList.toggle('active'); // Toggle the 'active' class to show/hide the menu
+    navLinks.classList.toggle('active');
 });
-
-
-// Initialize EmailJS
-emailjs.init("jkUMwZvx9mb7WTwVZ");
 
 // Handle form submission
 document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
-    // Send email via EmailJS
     emailjs.sendForm("service_hgnbabc", "template_d5vu3vc", this)
         .then(function (response) {
             alert("Message sent successfully!");
             console.log("SUCCESS!", response.status, response.text);
-            document.getElementById("contact-form").reset(); // Reset the form after successful submission
+            document.getElementById("contact-form").reset();
         }, function (error) {
             alert("Failed to send message. Please try again.");
             console.error("FAILED...", error);
