@@ -18,27 +18,15 @@ document.getElementById('hamburger-icon').addEventListener('click', function () 
 // Initialize EmailJS
 emailjs.init("GE8eROodzjpRsN9wH");
 
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault();
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form default action
 
-    // Collect form data
-    const formData = new FormData(this);
-
-    // Prepare email parameters
-    const emailParams = {
-        from_name: formData.get('from_name'),
-        from_email: formData.get('from_email'),
-        message: formData.get('message')
-    };
-
-    // Send email
-    emailjs.send("service_gc94r0o", "template_d5vu3vc", emailParams)
-        .then((response) => {
+    emailjs.sendForm("service_gc94r0o", "template_d5vu3vc", this)
+        .then(function (response) {
             alert("Message sent successfully!");
             console.log("SUCCESS!", response.status, response.text);
-            this.reset();
-        })
-        .catch((error) => {
+            document.getElementById("contact-form").reset(); // Reset the form after success
+        }, function (error) {
             alert("Failed to send message. Please try again.");
             console.error("FAILED...", error);
         });
