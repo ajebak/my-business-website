@@ -1,5 +1,5 @@
 // Initialize EmailJS
-emailjs.init("jkUMwZvx9mb7WTwVZ");
+emailjs.init("4fzZNrgeSvYfjd8iS");
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
