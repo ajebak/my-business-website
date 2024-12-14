@@ -30,7 +30,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     };
 
     // Ensure EmailJS initialization
-    emailjs.init("4fzZNrgeSvYfjd8iS");
+    emailjs.init("iRuXWMbvRWOcbiLZW");
 
     // Send the email using EmailJS
     emailjs.send("service_hgnbabc", "template_d5vu3vc", emailParams)
