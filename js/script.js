@@ -32,7 +32,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     };
 
     // Send email
-    emailjs.send("service_fzc07hp", "template_d5vu3vc", emailParams)
+    emailjs.send("service_gc94r0o", "template_d5vu3vc", emailParams)
         .then((response) => {
             alert("Message sent successfully!");
             console.log("SUCCESS!", response.status, response.text);
