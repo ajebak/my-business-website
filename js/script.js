@@ -19,13 +19,13 @@ document.getElementById('hamburger-icon').addEventListener('click', function () 
 emailjs.init("GE8eROodzjpRsN9wH");
 
 document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); // Prevent default submission
 
     emailjs.sendForm("service_gc94r0o", "template_d5vu3vc", this)
         .then(function (response) {
             alert("Message sent successfully!");
             console.log("SUCCESS!", response.status, response.text);
-            document.getElementById("contact-form").reset(); // Reset form after success
+            document.getElementById("contact-form").reset(); // Reset form on success
         }, function (error) {
             alert("Failed to send message. Please try again.");
             console.error("FAILED...", error);
