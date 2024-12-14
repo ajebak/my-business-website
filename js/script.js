@@ -14,26 +14,26 @@ document.getElementById('hamburger-icon').addEventListener('click', function () 
     navLinks.classList.toggle('active');
 });
 
+
+// Ensure EmailJS is initialized
+emailjs.init("GE8eROodzjpRsN9wH");
+
 // Handle form submission
 document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Collect form values correctly
+    // Collect form values
     const formData = new FormData(this);
 
-    // Correct the data object based on input names
+    // Prepare email parameters matching your template
     const emailParams = {
-        from_name: formData.get('from_name'),   // Matches input name
-        from_email: formData.get('from_email'), // Matches input name
-        message: formData.get('message'),       // Matches input name
-        to_email: 'bomotfarmstockltd27@gmail.com' // Business email
+        from_name: formData.get('from_name'),
+        from_email: formData.get('from_email'),
+        message: formData.get('message')
     };
 
-    // Ensure EmailJS initialization
-    emailjs.init("iRuXWMbvRWOcbiLZW");
-
     // Send the email using EmailJS
-    emailjs.send("service_hgnbabc", "template_d5vu3vc", emailParams)
+    emailjs.send("service_ez3723h", "template_d5vu3vc", emailParams)
         .then(function (response) {
             alert("Message sent successfully!");
             console.log("SUCCESS!", response.status, response.text);
