@@ -18,21 +18,6 @@ document.getElementById('hamburger-icon').addEventListener('click', function () 
 });
 
 // Handle form submission
-document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    emailjs.sendForm("service_hgnbabc", "template_d5vu3vc", this)
-        .then(function (response) {
-            alert("Message sent successfully!");
-            console.log("SUCCESS!", response.status, response.text);
-            document.getElementById("contact-form").reset();
-        }, function (error) {
-            alert("Failed to send message. Please try again.");
-            console.error("FAILED...", error);
-        });
-});
-
-
 document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -44,7 +29,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     formData.append('to_email', businessEmail);
 
     // Pass the form data for from_name and other fields dynamically
-    formData.append('from_name', formData.get('name')); // Name from the form
+    formData.append('name', formData.get('name')); // Name from the form
     formData.append('email', formData.get('email')); // Email from the form
     formData.append('message', formData.get('message')); // Message from the form
 
