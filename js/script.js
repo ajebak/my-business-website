@@ -21,10 +21,13 @@ emailjs.init("GE8eROodzjpRsN9wH");
 document.getElementById("contact-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent default submission
 
+    // Send email using EmailJS
     emailjs.sendForm("service_gc94r0o", "template_d5vu3vc", this)
         .then(function (response) {
             alert("Message sent successfully!");
             console.log("SUCCESS!", response.status, response.text);
+
+            // Clear form fields after successful submission
             document.getElementById("contact-form").reset(); // Reset form on success
         }, function (error) {
             alert("Failed to send message. Please try again.");
